@@ -1,0 +1,18 @@
+// DATABASE_URL="postgres://avnadmin:AVNS_PFZ8cGthsvU6_dCm897@pg-2c1b701a-pokedex-problem.i.aivencloud.com:22295/defaultdb?sslmode=require"
+// NODE_ENV = "development"
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Pokemon {
+   id Int @id @default(autoincrement())
+   name String @unique
+   types String[]
+   sprite String
+}
