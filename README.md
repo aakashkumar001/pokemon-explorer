@@ -30,7 +30,7 @@ DATABASE_URL = " "
 
  ```
  
-### NOte: Make sure you change the url to development ex:http://localhost:3000 on the TRPC-Provider file in the provider directory.
+### Note: Make sure you change the url to development eg:http://localhost:3000 on the TRPC-Provider file in the provider directory.
 
  ### Run the application
 
