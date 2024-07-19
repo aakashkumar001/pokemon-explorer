@@ -1,6 +1,8 @@
 import { trpc } from "@/server/client";
 
 export const usePokemonArray = (pokemonNames: string[]) => {
+
+  //fetching Pokemon Array
   const {
     data: pokemons,
     error,

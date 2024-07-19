@@ -1,18 +1,17 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Chip, Typography } from "@mui/material";
 import React from "react";
 import { PokemonRowProps } from "@/types/types";
 
-
-const PokemonRow = ({ pokemon }:any) => {
+const PokemonRow = ({ pokemon }: any) => {
   return (
     <>
       {pokemon && (
-        <div className="">
-          <div className="">
-            <p>{pokemon?.name}</p>
-            <p>{pokemon?.id}</p>
-            {pokemon?.types?.map((p:any) => (
-              <p>{p}</p>
+        <div className=" w-full flex-col justify-center items-center p-16  gap-10 mt-4">
+          <h1 className="text-gray-800">#{pokemon?.id}</h1>
+          <h1 className="text-2xl">{pokemon?.name}</h1>
+          <div>
+            {pokemon?.type?.map((p: any) => (
+              <Chip label={p} size="small" color="success" />
             ))}
             <img
               src={pokemon?.sprite}

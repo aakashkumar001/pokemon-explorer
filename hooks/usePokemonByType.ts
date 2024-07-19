@@ -4,6 +4,7 @@ import { useState } from "react";
 export const usePokemonByType = (selectedTypes: string) => {
   const [pokemonName, setPokemonName] = useState("");
 
+  //fetching Pokemon By Type
   const { data, error, isLoading } = trpc.pokemon.getPokemonsByType.useQuery(
     selectedTypes,
     {

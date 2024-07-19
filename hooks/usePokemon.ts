@@ -4,6 +4,7 @@ import { useState } from "react";
 export const usePokemon = (initialPokemonName: string) => {
   const [pokemonName, setPokemonName] = useState(initialPokemonName);
 
+  //fetching single pokemon
   const {
     data: pokemons,
     error,
