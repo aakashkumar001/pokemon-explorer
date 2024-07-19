@@ -2,12 +2,14 @@ import React from "react";
 import { PokemonTypeSelectionProps } from "@/types/types";
 import { Button } from "@mui/material";
 
+
 const searchTypes = ["grass", "fire", "water", "electric", "poison"];
 
 const PokemonTypeSelection: React.FC<PokemonTypeSelectionProps> = ({
   selectType,
   selectedType,
 }) => {
+
   const handleChange = (type: string) => {
     selectType(type);
     console.log(type);

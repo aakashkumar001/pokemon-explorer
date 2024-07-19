@@ -9,7 +9,7 @@ html{
 }
 
 body {
-    background-image: url('https://api.wallpapers.ai/static/downloads/936e9c70f93942ce84f572bfddafb240/upscaled/000000_981068920_kdpmpp2m15_PS7.5_Design_a_desktop_wallpaper_in_the_Pok_mon_art_style_a_serene_landscape_with_rolling_hills,_lush_foliage,_and_winding_paths._Captur_[upscaled].jpg');
+    background-image: url('../public/background.jpg');
     background-size: cover; /* Ensures the image covers the whole page */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat;

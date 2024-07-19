@@ -9,7 +9,7 @@ export const usePokemon = (initialPokemonName: string) => {
     data: pokemons,
     error,
     isLoading,
-  } = trpc.pokemon.getPokemon.useQuery(pokemonName, {
+  } = trpc.pokemon.getPokemon.useQuery(pokemonName.toLowerCase(), {
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
   

@@ -52,18 +52,10 @@ const PokemonSearchForm = () => {
             Get Pokemon
           </Button>
         </form>
-        <section className="m-2">
+        <div className="mt-2">
         <FilterablePokedexTable />
-        </section>
-       
-        {/* {searchPokemon.includes(",") ? (
-        <PokedexTable pokemons={pokemonArray} />
-      ) : (
-        pokemons && <PokemonRow pokemon={pokemons} />
-      )} */}
-        {searchPokemon.includes(",") ? <PokedexTable pokemons={pokemonArray} /> : null}
-        {searchPokemon.includes(",") ? null : <PokemonRow pokemon={pokemons} />}
-       
+        </div>
+        {searchPokemon.includes(",") ? <PokedexTable pokemons={pokemonArray} /> : <PokemonRow pokemon={pokemons} />}
       </div>
     </>
   );
