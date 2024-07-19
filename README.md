@@ -1,5 +1,5 @@
 
-!["screenshort"](/public/screenshort.png)
+!["screenshort"](/public/screen.png)
 # Pokedex Platform
 
 *Explore your favourite pokemon!*
