@@ -1,8 +1,9 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { FC } from "react";
+import React from "react";
 import { PokemonRowProps } from "@/types/types";
 
-const PokemonRow: FC<PokemonRowProps> = ({ pokemon }) => {
+
+const PokemonRow = ({ pokemon }:any) => {
   return (
     <>
       {pokemon && (
@@ -10,7 +11,7 @@ const PokemonRow: FC<PokemonRowProps> = ({ pokemon }) => {
           <div className="">
             <p>{pokemon?.name}</p>
             <p>{pokemon?.id}</p>
-            {pokemon?.types?.map((p) => (
+            {pokemon?.types?.map((p:any) => (
               <p>{p}</p>
             ))}
             <img

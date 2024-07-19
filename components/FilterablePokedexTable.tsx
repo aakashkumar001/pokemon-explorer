@@ -18,7 +18,7 @@ const FilterablePokedexTable = () => {
   }
  },[data])
 
-  const handleTypeSelection = (type: string | undefined) => {
+  const handleTypeSelection = (type:any) => {
     setSelectedTypes(type);
   };
   return (

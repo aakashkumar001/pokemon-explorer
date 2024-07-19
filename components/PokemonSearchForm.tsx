@@ -56,6 +56,11 @@ const PokemonSearchForm = () => {
         <FilterablePokedexTable />
         </section>
        
+        {/* {searchPokemon.includes(",") ? (
+        <PokedexTable pokemons={pokemonArray} />
+      ) : (
+        pokemons && <PokemonRow pokemon={pokemons} />
+      )} */}
         {searchPokemon.includes(",") ? <PokedexTable pokemons={pokemonArray} /> : null}
         {searchPokemon.includes(",") ? null : <PokemonRow pokemon={pokemons} />}
        
