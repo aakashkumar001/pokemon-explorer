@@ -53,7 +53,7 @@ const PokemonSearchForm = () => {
           </Button>
         </form>
         <div className="mt-2">
-          <h6 className="text-center text-gray-500 text-md">use comma seperated names for multiple search</h6>
+          <h6 className="text-center text-gray-500 text-sm">use comma seperated names for multiple search</h6>
         <FilterablePokedexTable />
         </div>
         {searchPokemon.includes(",") ? <PokedexTable pokemons={pokemonArray} /> : <PokemonRow pokemon={pokemons} />}
