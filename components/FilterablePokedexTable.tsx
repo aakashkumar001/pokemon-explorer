@@ -1,27 +1,37 @@
-import { useState } from "react";
-import PokemonTypeSelection from "./PokemonTypeSelection"
+import { useEffect, useState } from "react";
+import PokemonTypeSelection from "./PokemonTypeSelection";
 import { usePokemonByType } from "@/hooks/usePokemonByType";
 import PokedexTable from "./PokedexTable";
-
+import { usePokemonArray } from "@/hooks/usePokemonArray";
+import { Pokemon } from "@/types/types";
 
 
 const FilterablePokedexTable = () => {
-    const [selectedTypes, setSelectedTypes] = useState("");
+  const [selectedTypes, setSelectedTypes] = useState("");
+  const [pokemonArray,setPokemonArray] = useState<Pokemon[]>([]);
 
-    const {data} = usePokemonByType(selectedTypes)
-    console.log(data)
+  const { data } = usePokemonByType(selectedTypes);
 
-    const handleTypeSelection = (type: string | undefined) => {
-        setSelectedTypes(type);
-      };
+ useEffect(() => {
+  if(data) {
+    setPokemonArray(data);
+  }
+ },[data])
+
+  const handleTypeSelection = (type: string | undefined) => {
+    setSelectedTypes(type);
+  };
   return (
     <>
-     <PokemonTypeSelection selectedType={selectedTypes} selectType={handleTypeSelection}/>
-     {data && data.length > 0 && (
-     <PokedexTable pokemonNames={data?.map((pokemon) => pokemon.name)} />
-     ) }
+      <PokemonTypeSelection
+        selectedType={selectedTypes}
+        selectType={handleTypeSelection}
+      />
+      {data && data.length > 0 && (
+        <PokedexTable pokemons={pokemonArray} />
+      )}
     </>
-  )
-}
+  );
+};
 
-export default FilterablePokedexTable
+export default FilterablePokedexTable;

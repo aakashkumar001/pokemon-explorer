@@ -1,13 +1,10 @@
 import { usePokemonArray } from "@/hooks/usePokemonArray";
 import { Table } from "@mui/material";
-import PokemonRow from "./PokemonRow";
+import { Pokemon } from "@/types/types";
+import { PokedexTableProps } from "@/types/types";
 
 
-const PokedexTable = ({pokemonNames}:{pokemonNames:string[]}) => {
-  console.log(pokemonNames)
-
-  const { data: pokemonArray, error, isLoading } = usePokemonArray(pokemonNames);
-  console.log(pokemonArray)
+const PokedexTable: React.FC<PokedexTableProps> = ({ pokemons }) => {
   return (
     <Table>
       <thead>
@@ -19,7 +16,7 @@ const PokedexTable = ({pokemonNames}:{pokemonNames:string[]}) => {
         </tr>
       </thead>
       <tbody>
-        {pokemonArray?.map((pokemon) => (
+        {pokemons?.map((pokemon) => (
           <div>
             <h1>{pokemon.id}</h1>
             <h1>{pokemon.name}</h1>
@@ -31,7 +28,7 @@ const PokedexTable = ({pokemonNames}:{pokemonNames:string[]}) => {
         ))}
       </tbody>
     </Table>
-  )
-}
+  );
+};
 
-export default PokedexTable
+export default PokedexTable;

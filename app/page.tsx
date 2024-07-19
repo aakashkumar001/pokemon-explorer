@@ -1,23 +1,20 @@
 "use client";
 
 import FilterablePokedexTable from "@/components/FilterablePokedexTable";
-import PokemonForm from "@/components/PokemonForm";
-import { trpc } from "@/server/client";
+import PokemonSearchForm from "@/components/PokemonSearchForm";
+import Image from "next/image";
 
 export default function Home() {
-
-  // // const getUsers = await trpc.users.getUsers.useQuery();
-  // const user = trpc.users.getPokemon.useQuery("bulbasur");
-  // const users = trpc.users.getPokemonsArray.useQuery(["bulbasur","squirtle","pikachu"]);
-  // const userss = trpc.users.getPokemonsByType.useQuery("poison");
-  // console.log(userss.data)
-
   return (
-   <div className="text-3xl text-green-500 font-bold">
-    PokeDex
-     {/* <h1>{JSON.stringify(userss.data)}</h1> */}
-     <PokemonForm/>
-     <FilterablePokedexTable/>
-   </div>
+    <>
+      <header className="text-3xl text-green-500 font-bold w-full flex items-center justify-center">
+        <Image src="/logo.png" width={480} height={320} alt="logo" />
+      </header>
+      <main>
+        <PokemonSearchForm />
+        <FilterablePokedexTable />
+      </main>
+      <footer className="text-center">2024 ©️ All rights Reserved</footer>
+    </>
   );
 }

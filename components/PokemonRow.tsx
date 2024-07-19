@@ -1,20 +1,12 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { FC } from "react";
+import { PokemonRowProps } from "@/types/types";
 
-interface PokemonRowProps {
-  pokemon: {
-    id: number;
-    name: string;
-    types: string[];
-    sprite: string;
-  };
-}
 
 const PokemonRow: FC<PokemonRowProps> = ({ pokemon }) => {
-  console.log(pokemon)
   return (
     <>
-      <Card>
+      <Card className="">
         <CardContent>
           <Typography variant="h5">{pokemon?.name}</Typography>
           <Typography>{pokemon?.id}</Typography>

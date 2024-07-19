@@ -1,8 +1,8 @@
-import { usersRouter } from "./routers/users";
+import { pokemonRouter } from "./routers/pokemonRouter";
 import {router} from "./trpc";
 
 export const appRouter = router({
-   users:usersRouter,
+   pokemon:pokemonRouter,
 });
 
 export type AppRouter = typeof appRouter;

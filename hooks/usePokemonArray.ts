@@ -1,12 +1,17 @@
 import { trpc } from "@/server/client";
 
 export const usePokemonArray = (pokemonNames: string[]) => {
-  const { data, error, isLoading } = trpc.users.getPokemonsArray.useQuery(pokemonNames, {
+  const {
+    data: pokemons,
+    error,
+    isLoading,
+  } = trpc.pokemon.getPokemonsArray.useQuery(pokemonNames, {
+    enabled: pokemonNames?.length > 0,
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
   return {
-    data,
+    pokemons,
     error,
     isLoading,
   };

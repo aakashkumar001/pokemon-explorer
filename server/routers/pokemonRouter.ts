@@ -1,9 +1,9 @@
 import {publicProcedure, router} from "../trpc";
 import {z} from "zod";
-import {prisma} from "../../utils/prisma"
+import {prisma} from "../../lib/prisma"
 
 
-export const usersRouter = router({
+export const pokemonRouter = router({
     getPokemon: publicProcedure.input(z.string()).query(async ({input}) => {
         const pokemon = await prisma.pokemon.findUnique({where:{name:input}});
         return {
