@@ -12,7 +12,6 @@ export default function Home() {
       </header>
       <main>
         <PokemonSearchForm />
-        <FilterablePokedexTable />
       </main>
       <footer className="text-center">2024 ©️ All rights Reserved</footer>
     </>

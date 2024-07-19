@@ -1,5 +1,7 @@
 import React from "react";
 import { PokemonTypeSelectionProps } from "@/types/types";
+import { Button } from "@mui/material";
+
 
 const searchTypes = ["grass", "fire", "water", "electric", "poison"];
 
@@ -12,9 +14,10 @@ const PokemonTypeSelection: React.FC<PokemonTypeSelectionProps> = ({
     console.log(type);
   };
 
+
   return (
-    <div className="flex items-center justify-center">
-      <h3 className="font-bold text-2xl text-green-500">Select By Type</h3>
+    <div className="flex items-center justify-center gap-2">
+      <h3 className="font-bold text-2xl text-blue-500">Select By Type</h3>
       {searchTypes.map((type) => (
         <label key={type} className="flex items-center gap-2">
           <input
@@ -27,8 +30,9 @@ const PokemonTypeSelection: React.FC<PokemonTypeSelectionProps> = ({
           {type}
         </label>
       ))}
-      <button onClick={() => selectType(undefined)}>Clear Selection</button>
+      <Button variant="contained" color="secondary" onClick={() => selectType(undefined)}>Clear Selection</Button>
     </div>
+    
   );
 };
 

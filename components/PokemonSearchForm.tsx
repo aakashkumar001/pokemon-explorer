@@ -7,6 +7,7 @@ import PokemonRow from "./PokemonRow";
 import { usePokemonArray } from "@/hooks/usePokemonArray";
 import PokedexTable from "./PokedexTable";
 import { Pokemon } from "@/types/types";
+import FilterablePokedexTable from "./FilterablePokedexTable";
 
 const PokemonSearchForm = () => {
   const [searchPokemon, setSearchPokemon] = useState("");
@@ -36,6 +37,7 @@ const PokemonSearchForm = () => {
 
   return (
     <>
+    
       <div className="">
         <form
           onSubmit={handleSubmit}
@@ -50,8 +52,13 @@ const PokemonSearchForm = () => {
             Get Pokemon
           </Button>
         </form>
+        <section className="m-2">
+        <FilterablePokedexTable />
+        </section>
+       
         {searchPokemon.includes(",") ? <PokedexTable pokemons={pokemonArray} /> : null}
         {searchPokemon.includes(",") ? null : <PokemonRow pokemon={pokemons} />}
+       
       </div>
     </>
   );

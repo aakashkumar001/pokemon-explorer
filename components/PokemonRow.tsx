@@ -2,24 +2,26 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { FC } from "react";
 import { PokemonRowProps } from "@/types/types";
 
-
 const PokemonRow: FC<PokemonRowProps> = ({ pokemon }) => {
   return (
     <>
-      <Card className="">
-        <CardContent>
-          <Typography variant="h5">{pokemon?.name}</Typography>
-          <Typography>{pokemon?.id}</Typography>
-          {pokemon?.types?.map((p) => (
-            <Typography>{p}</Typography>
-          ))}
-          <CardMedia
-            component="img"
-            image={pokemon?.sprite}
-            alt={pokemon?.name}
-          />
-        </CardContent>
-      </Card>
+      {pokemon && (
+        <div className="">
+          <div className="">
+            <p>{pokemon?.name}</p>
+            <p>{pokemon?.id}</p>
+            {pokemon?.types?.map((p) => (
+              <p>{p}</p>
+            ))}
+            <img
+              src={pokemon?.sprite}
+              alt={pokemon?.name}
+              height={280}
+              width={240}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };

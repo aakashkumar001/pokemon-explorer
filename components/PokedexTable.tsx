@@ -6,28 +6,20 @@ import { PokedexTableProps } from "@/types/types";
 
 const PokedexTable: React.FC<PokedexTableProps> = ({ pokemons }) => {
   return (
-    <Table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Types</th>
-          <th>sprite</th>
-        </tr>
-      </thead>
-      <tbody>
+        <div className="flex-col justify-center p-16 items-center lg:flex xl:flex-row gap-10 mt-4">
         {pokemons?.map((pokemon) => (
-          <div>
-            <h1>{pokemon.id}</h1>
-            <h1>{pokemon.name}</h1>
-            <img src={pokemon.sprite} alt="" />
+          <div className="flex-col items-center justify-center lg:flex-row xl:flex-row  bg-slate-400">
+            <span className="ml-2">#{pokemon.id}</span>
+            <h1 className="ml-2">{pokemon.name}</h1>
+            <div className="w-64 h-56 flex justify-center items-center">
+            <img className="object-cover" src={pokemon.sprite} alt="" />
+            </div>
             {pokemon.types.map((type) => (
-              <p>{type}</p>
+              <p className="p-4">{type}</p>
             ))}
           </div>
         ))}
-      </tbody>
-    </Table>
+        </div>
   );
 };
 
