@@ -1,7 +1,8 @@
 
 !["screenshort"](/public/screen.png)
-# Pokedex Platform
+# [Pokedex Platform]("https://pokemon-explorer-pink.vercel.app/")
 
+## [Visit]("https://pokemon-explorer-pink.vercel.app/")
 *Explore your favourite pokemon!*
 
 ## Tech Stacks
